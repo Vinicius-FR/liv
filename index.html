@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/heart.png">
+  <title>Liv <3</title>
+  <style>
+    body {
+      margin-top: 100px;
+      background-color: #ffd3e6; /* rosa */
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #question {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .button {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      margin: 0 10px;
+      transition: all 0.3s ease;
+    }
+    #yes {
+      background-color: #4caf50; /* verde */
+      color: white;
+    }
+    #no {
+      background-color: #f44336; /* vermelho */
+      color: white;
+    }
+    #message {
+      display: none;
+      font-size: 24px;
+      margin-top: 20px;
+    }
+    #loveImage {
+        width: 20%;
+    }
+  </style>
+</head>
+<body>
+  <img id="loveImage" src="images\image.jpeg" alt="Amor">
+  <div id="question">Liv, quer sair comigo?</div>
+  <button id="yes" class="button" onclick="showMessage('Sim')">Sim</button>
+  <button id="no" class="button" onclick="increaseSize()">Não</button>
+  <div id="message"></div>
+
+  <script>
+    function increaseSize() {
+      var yesButton = document.getElementById('yes');
+      yesButton.style.width = (yesButton.offsetWidth * 2) + "px";
+      yesButton.style.height = (yesButton.offsetHeight * 2) + "px";
+    }
+
+    function showMessage(answer) {
+      var questionDiv = document.getElementById('question');
+      var buttonsDiv = document.querySelectorAll('.button');
+      var messageDiv = document.getElementById('message');
+
+      questionDiv.style.display = 'none';
+      buttonsDiv.forEach(function(button) {
+        button.style.display = 'none';
+      });
+      
+      messageDiv.style.display = 'block';
+      messageDiv.textContent = 'Obrigado, abobada! Me chama no zap pra nois marcar!';
+    }
+  </script>
+</body>
+</html>
